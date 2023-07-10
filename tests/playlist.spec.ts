@@ -30,7 +30,7 @@ test.describe.serial('Create playlist, add items, get items, unfollow playlist',
 	})
 
 	test('Add items to playlist', async ({ request }) => {
-		const response = await request.post(`v1/playlists/${playlistId}/tracks`, {
+		const response = await request.post(`/v1/playlists/${playlistId}/tracks`, {
 			headers: {
 				Authorization: `Bearer ${accessToken}`,
 				'Content-Type': 'application/json'

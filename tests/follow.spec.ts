@@ -24,7 +24,7 @@ test.describe.serial('Follow and unfollow artists and check followings', async (
   })
 
   test('Check if artists are followed', async ({ request }) => {
-    const response = await request.get(`v1/me/following/contains?type=artist&ids=${TestData.artistIds}`, {
+    const response = await request.get(`/v1/me/following/contains?type=artist&ids=${TestData.artistIds}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`
       }
@@ -50,7 +50,7 @@ test.describe.serial('Follow and unfollow artists and check followings', async (
   })
 
   test('Check if artists are no longer followed', async ({ request }) => {
-    const response = await request.get(`v1/me/following/contains?type=artist&ids=${TestData.artistIds}`, {
+    const response = await request.get(`/v1/me/following/contains?type=artist&ids=${TestData.artistIds}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`
       }

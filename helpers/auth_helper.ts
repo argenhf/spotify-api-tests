@@ -1,6 +1,7 @@
 import { expect, chromium } from '@playwright/test'
 import axios from 'axios'
 import qs from 'qs'
+import { TestData } from './test_data.ts'
 
 export {
   getAccessTokenClientCredentials,
@@ -44,8 +45,8 @@ async function getAccessTokenAuthorizationCode() {
   await page.goto(
     `https://accounts.spotify.com/authorize?response_type=code&client_id=${CLIENT_ID}&scope=${SCOPE}&redirect_uri=${REDIRECT_URI}`
   )
-  await page.locator('#login-username').fill('argenglhf@proton.me')
-  await page.locator('#login-password').fill('Test1234!')
+  await page.locator('#login-username').fill(TestData.email)
+  await page.locator('#login-password').fill(TestData.password)
   await page.locator('#login-button').click()
   await page.waitForNavigation()
 
