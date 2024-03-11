@@ -9,7 +9,7 @@ export {
     getAccessTokenAuthorizationCode,
 }
 
-let accessToken
+let accessToken: string
 
 async function getAccessTokenClientCredentials() {
     const formData = {
